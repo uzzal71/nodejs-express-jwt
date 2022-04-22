@@ -1,8 +1,14 @@
 import express from "express";
+import mongoose from "mongoose";
 import bodyParser from "body-parser";
+
+import routes from "./src/routes/userRoute";
 
 const app = express();
 const PORT = 4000;
+
+// define routes
+routes(app);
 
 // body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
