@@ -1,18 +1,24 @@
 import { 
-    addNewUser,
     getUsers,
     getUserWithId,
     updateUser,
     deleteUser
  } from "../controllers/userController";
 
+ import { 
+    singup,
+    login,
+ } from "../controllers/authController";
+
 const routes = (app) => {
+    app.route('/signup')
+        .post(singup)
+
+        .post(login);
+
     app.route('/user')
         // Get All User
         .get(getUsers)
-
-        // Add New User
-        .post(addNewUser);
 
     app.route('/user/:userId')
         // Get Specific User

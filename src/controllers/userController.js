@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 import { UserSchema } from "../models/userModel";
 
 const User = mongoose.model('User', UserSchema);
-
-export const addNewUser = (req, res) => {
-    res.send('POST Request Controller');
-}
 
 export const getUsers = (req, res) => {
     res.send('GET Request Controller');

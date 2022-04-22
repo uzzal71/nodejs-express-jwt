@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/uzzal71/nodejs-express-jwt#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "express": "^4.17.3",
     "mongodb": "^4.5.0",
