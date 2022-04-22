@@ -23,6 +23,18 @@ app.use(bodyParser.json());
 // define routes
 routes(app);
 
+// default error handler
+const errorHandler = (err, req, res, next) => {
+    if (res.headersSend) {
+        return next(err);
+    }
+    return res.status(500).json({
+        "error": err
+    });
+};
+
+app.use(errorHandler);
+
 app.get('/', (req, res) => {
     res.send(`Node and express server running on port ${PORT}`);
 });

@@ -10,6 +10,8 @@ import {
     login,
  } from "../controllers/authController";
 
+ import { verify } from "../middlewares/verify";
+
 const routes = (app) => {
     app.route('/signup')
         .post(singup)
@@ -19,17 +21,17 @@ const routes = (app) => {
 
     app.route('/user')
         // Get All User
-        .get(getUsers)
+        .get(verify, getUsers)
 
     app.route('/user/:userId')
         // Get Specific User
-        .get(getUserWithId)
+        .get(verify, getUserWithId)
 
         // Update Specific User
-        .put(updateUser)
+        .put(verify, updateUser)
 
         // Delete Specific User
-        .delete(deleteUser);
+        .delete(verify, deleteUser);
 }
 
 export default routes;

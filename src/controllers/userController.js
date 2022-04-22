@@ -5,17 +5,37 @@ import { UserSchema } from "../models/userModel";
 const User = mongoose.model('User', UserSchema);
 
 export const getUsers = (req, res) => {
-    res.send('GET Request Controller');
+    User.find({}, (err, users) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(users);
+    });
 }
 
 export const getUserWithId = (req, res) => {
-    res.send('GET Single Request Controller');
+    User.findById(req.params.userId, (err, user) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(user);
+    });
 }
 
 export const updateUser = (req, res) => {
-    res.send('PUT Request Controller');
+    User.findOneAndUpdate({ _id: req.params.userId }, req.body, { new: true, useFindAndModify: false }, (err, user) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(user);
+    });
 }
 
 export const deleteUser = (req, res) => {
-    res.send('DELETE Request Controller');
+    User.remove({ _id: req.params.userId }, (err, user) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json({ message: 'Successfully deleted user' });
+    });
 }
