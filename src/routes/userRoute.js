@@ -1,12 +1,28 @@
+import { 
+    addNewUser,
+    getUsers,
+    getUserWithId,
+    updateUser,
+    deleteUser
+ } from "../controllers/userController";
+
 const routes = (app) => {
     app.route('/user')
-        .get((req, res) => {res.send('GET Request');})
-        .post((req, res) => {res.send('POST Request');});
+        // Get All User
+        .get(getUsers)
+
+        // Add New User
+        .post(addNewUser);
 
     app.route('/user/:userId')
-        .get((req, res) => {res.send('GET Single Request');})
-        .put((req, res) => {res.send('PUT Request');})
-        .delete((req, res) => {res.send('DELETE Request');});
+        // Get Specific User
+        .get(getUserWithId)
+
+        // Update Specific User
+        .put(updateUser)
+
+        // Delete Specific User
+        .delete(deleteUser);
 }
 
 export default routes;

@@ -19,11 +19,11 @@ export const UserSchema = new Schema({
         type: Number
     },
     password: {
-        type: string,
+        type: String,
         required: "Enter a password"
     },
     status: {
-        type: string,
+        type: String,
         enum: ['active', 'inactive']
     },
     create_date: {
