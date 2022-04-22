@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-express-jwt",
+  "version": "1.0.0",
+  "description": "Authenticate with JSON Web Token (JWT) - Node.js Express.js, MongoDB, mongoose, Body-Parser",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uzzal71/nodejs-express-jwt.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "Body-Parser",
+    "Babel"
+  ],
+  "author": "Uzzal71",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uzzal71/nodejs-express-jwt/issues"
+  },
+  "homepage": "https://github.com/uzzal71/nodejs-express-jwt#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
