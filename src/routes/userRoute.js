@@ -14,7 +14,8 @@ const routes = (app) => {
     app.route('/signup')
         .post(singup)
 
-        .post(login);
+    app.route('/login')
+        .post(login)
 
     app.route('/user')
         // Get All User

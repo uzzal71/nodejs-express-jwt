@@ -1,10 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 
 import routes from "./src/routes/userRoute";
 
 const app = express();
+dotenv.config();
 const PORT = 4000;
 
 // mongoose connection
